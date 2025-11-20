@@ -298,7 +298,7 @@ Reduced-order model (ROM)
 ::::{.mybox-body}
 
 * Build a **surrogate model**
-  * Parametrised solution $\left(\textcolor{Blue}{\vect{x}}, \textcolor{LGreen}{\para}\right)$
+  * Parametrised solution $\vect{u}\left(\textcolor{Blue}{\vect{x}}, \textcolor{LGreen}{\para}\right)$
 * No computations online
 * **On the fly** evaluation of the model
   * Real-time parameters estimation
@@ -602,7 +602,7 @@ Reduced-order model
 :::{.mybox}
 
 ::::{.mybox-header-bis}
-Finding the reduced-order basis
+Finding the reduced-order basis - mostly from previous expensive computations
 ::::
 
 ::::{.mybox-body}
@@ -613,6 +613,8 @@ Finding the reduced-order basis
   * Require wise selection of the snapshots and \emph{a priori} costly computations 
 * **Reduced basis method** [@madayReducedBasisElementMethod2002] with EIM [@barraultEmpiricalInterpolationMethod2004]
   * Rely on prior expensive computations
+* **Auto-encoders** for non-linear ROM [@tomasettoLatentFeedbackControl2025]
+  * Also relies previously generated data/snapshots
 :::
 
 :::
