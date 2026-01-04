@@ -32,7 +32,7 @@ jobs:
         - name: Install Python dependencies
           run: |
             python -m pip install --upgrade pip
-            pip install jupyter nbformat nbclient
+            pip install jupyter nbformat nbclient plotly
 
         - name: Set up Quarto
           uses: quarto-dev/quarto-actions/setup@v2
