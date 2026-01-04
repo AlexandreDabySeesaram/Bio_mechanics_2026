@@ -1040,13 +1040,13 @@ NN-PGD
 
 ::: {.column width="50%"}
 
-{{< include Figures/Convergence_2D_plotly.qmd >}}
+<!-- {{< include Figures/Convergence_2D_plotly.qmd >}} -->
 
 :::
 
 ::: {.column width="50%"}
 
-{{< include Figures/Loss_decay_2D_plotly.qmd >}}
+<!-- {{< include Figures/Loss_decay_2D_plotly.qmd >}} -->
 
 :::
 
@@ -1392,7 +1392,7 @@ Conclusion
   * Benefits from all recent developments in machine learning
 * Surrogate modelling of parametrised PDE solution
   * Promising results on simple toy case
-
+  * Shape variability taken into account
 
 :::: {style='margin-top: 1.7em;'}
 ::::
@@ -1465,8 +1465,8 @@ Prospective applications
 ::: {.mybox-body}
 * Digital twin for 
   * real-time haptic feedback (*e.g.,* robotic surgery, training)
-  * optimisation of 3D printing (*e.g.,* 3D-printed aortic models)
-  * prosthesis personalisation
+  * shape-optimisation (of 3D printed organs, personalised prosthesis, etc.)
+    * Inexpensive shape derivative of mechanical quantities
 :::
  
 ::::

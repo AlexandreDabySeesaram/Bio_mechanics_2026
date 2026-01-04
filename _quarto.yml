@@ -17,11 +17,15 @@ project:
 
 format: 
   revealjs:
+    include-in-header:
+      - text: |
+          <script>
+            window.PlotlyConfig = {MathJaxConfig: 'local'};
+          </script>
+    self-contained-math: true
+    html-math-method: mathjax
     css: Template/ENSTA.css
     smaller: true
-    html-math-method: 
-      method: mathjax
-      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
     slide-number: c/t
     show-slide-number: all
     code-fold: true
