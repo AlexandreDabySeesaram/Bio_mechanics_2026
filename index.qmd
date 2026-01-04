@@ -6,7 +6,7 @@ author:
     - name: Alexandre Daby-Seesaram <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-2374-0971)</span></sup>
       email: alexandre.daby-seesaram@polytechnique.edu
       affiliations:
-        - ref: lms
+        - ref: ensta
     - name: Katerina Skardova <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-9870-3438)</span></sup>
       email: katerina.skardova@polytechnique.edu
       affiliations:
@@ -18,6 +18,8 @@ author:
 affiliations:
 - id: lms
   name: LMS, École Polytechnique, Paris, France
+- id: ensta
+  name: LMI, ENSTA, IP Paris, France
 ---
 
 # I - Part I (Hidden) {visibility="hidden"}
@@ -607,6 +609,9 @@ Finding the reduced-order basis - mostly from previous expensive computations
 
 ::::{.mybox-body}
 
+:::: {.columns}
+
+::: {.column width="65%"}
 * **Linear Normal Modes** (eigenmodes of the structure) [@hansteenAccuracyModeSuperposition1979]
   * Do not account for the loading and behaviour specifics
 * **Proper Orthogonal Decomposition** [@chatterjeeIntroductionProperOrthogonal2000;@radermacherComparisonProjectionbasedModel2013]
@@ -615,6 +620,23 @@ Finding the reduced-order basis - mostly from previous expensive computations
   * Rely on prior expensive computations
 * **Auto-encoders** for non-linear ROM [@tomasettoLatentFeedbackControl2025]
   * Also relies previously generated data/snapshots
+:::
+
+::: {.column width="35%"}
+
+::::: {.fragment .fade-left}
+
+:::: {style='margin-top: 3em;'}
+::::
+
+* *A priori* ROM methods relying **only on the PDEs**
+  * such as the PGD
+:::::
+
+:::
+
+::::
+
 :::
 
 :::

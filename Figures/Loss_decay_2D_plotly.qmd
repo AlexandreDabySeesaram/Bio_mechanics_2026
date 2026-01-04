@@ -53,21 +53,27 @@ fig.update_layout(
                 showgrid=True,
                 gridcolor='lightgray'),
     yaxis=dict(
-        title='Loss Decay',
+        # title='Loss Decay',
+        title=dict(
+            text='Loss Decay', 
+            font=dict(color='#170f38')),
         type='log',
         tickvals=[1e-07, 1e-05, 1e-03, 1e-01],
         ticktext=['10⁻⁷', '10⁻⁵', '10⁻³', '10⁻¹'],
-        titlefont=dict(color='#170f38'),
+        # titlefont=dict(color='#170f38'),
         tickfont=dict(color='#170f38'),
         showgrid=True,
         gridcolor='lightgray', 
     ),
     yaxis2=dict(
-        title='Modes',
+        # title='Modes',
+        title=dict(
+            text='Modes', 
+            font=dict(color='#3a46f5')),
         overlaying='y',
         side='right',
         tickvals=[1, 2, 3],
-        titlefont=dict(color='#3a46f5'),
+        # titlefont=dict(color='#3a46f5'),
         tickfont=dict(color='#3a46f5')
     ),
     shapes=[
