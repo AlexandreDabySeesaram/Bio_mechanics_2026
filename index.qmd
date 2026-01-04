@@ -1,6 +1,6 @@
 ---
 title: "Digital Twin of Human Lungs: Towards Real-Time Simulation and Registration of Soft Organs"
-subtitle: "E4H Forum - 2025"
+subtitle: "Biomechanics seminar @ IPP"
 date: 11/20/2025
 author: 
     - name: Alexandre Daby-Seesaram <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-2374-0971)</span></sup>
