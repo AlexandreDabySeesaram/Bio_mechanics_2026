@@ -1,7 +1,7 @@
 ---
 title: "Digital Twin of Human Lungs: Towards Real-Time Simulation and Registration of Soft Organs"
 subtitle: "Biomechanics seminar @ IPP"
-date: 11/20/2025
+date: 01/05/2026
 author: 
     - name: Alexandre Daby-Seesaram <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-2374-0971)</span></sup>
       email: alexandre.daby-seesaram@polytechnique.edu
@@ -1040,13 +1040,13 @@ NN-PGD
 
 ::: {.column width="50%"}
 
-<!-- {{< include Figures/Convergence_2D_plotly.qmd >}} -->
+{{< include Figures/Convergence_2D_plotly.qmd >}}
 
 :::
 
 ::: {.column width="50%"}
 
-<!-- {{< include Figures/Loss_decay_2D_plotly.qmd >}} -->
+{{< include Figures/Loss_decay_2D_plotly.qmd >}}
 
 :::
 
@@ -1201,6 +1201,62 @@ Note
 
 ::::
 
+## Parametrisation of high-dimensional quantities
+
+* Most relevant patient specific quantities *a priori* lives in high dimension and are not parametrised
+  * A parametrisation step is required to use a relatively small number of patient-specific parameters
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**Fibrosed-healthy clustering**
+
+
+![Fibrosed zones [@peyrautQuantificationDincertitudesPour2024a]](Figures/fibrosed.png){ width="85%" fig-align="left"}
+
+:::
+
+::: {.column width="50%"}
+
+**Shapes**
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+![](Figures/shapes/P1.png){ width="80%" }
+
+:::
+
+::: {.column width="49%"}
+![](Figures/shapes/P15.png){ width="80%" }
+
+:::
+
+::::
+
+:::: {style='margin-top: -3em;'}
+::::
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+![](Figures/shapes/P35.png){ width="80%" }
+
+:::
+
+::: {.column width="49%"}
+![](Figures/shapes/P4.png){ width="80%" }
+
+:::
+
+::::
+
+:::
+
+::::
 
 
 ## Shape model - registration [@ganglFullySemiautomatedShape2021].{.custom-h2-links} 
@@ -1370,6 +1426,48 @@ Shape model
 ::::
 
 
+## Shape model - from an average shape
+
+:::: {.columns}
+
+::: {.column width="55%"} 
+
+![](Schemes/AverageShape.svg){ width=85% fig-align="center"}
+
+:::: {style='margin-top: -2.5em;'}
+::::
+
+* $\forall i \in \llbracket1,n\rrbracket$
+  * $\vect{u}_i, \phi_i\left(\vect{X}\right)$ mappings and transformations on the sphere
+  * $\overline{\vect{u}}_i, \overline{\phi}_i\left(\overline{\vect{x}}\right)$ mappings and transformations on the average shape
+* $\overline{\Omega}$ The average shape
+  * $\overline{\vect{u}}, \overline{\phi}\left(\overline{\vect{x}}\right)$ mappings and transformations from sphere to AS
+
+
+:::
+
+::: {.column width="44%"}
+
+* Kinematics on the average shape $\overline{\Omega}$
+
+::: {data-id="2" }
+
+$$
+\begin{align}
+\underbrace{\matrice{1} + \matrice{\nabla}_{\overline{\vect{x}}} \overline{\vect{u}}_i\left(\overline{\vect{x}}\right)}_{\matrice{\overline{F}}_i} & = \matrice{1} + \matrice{\nabla}_X \left( \vect{u}_i\left(\vect{X}\right) - \overline{\vect{u}}\left(\vect{X}\right) \right) \matrice{\overline{F}}^{-1} \\
+& = \matrice{F}_i \matrice{\overline{F}}^{-1} \\
+\end{align}$$
+
+:::
+
+* From there we can compute $$\overline{\Omega} = \text{argmin} \sum\limits_{i=1}^n \int_{\overline{\Omega}} W\left( \matrice{\overline{F}}_i\right)$$ 
+* And then we parametrise the residual mappings 
+$$\overline{u}_i = \overline{u}_i\left(\para \right) := u_i - \overline{u}$$
+
+:::
+
+::::
+
 
 
 ## Conclusion
@@ -1464,7 +1562,7 @@ Prospective applications
 
 ::: {.mybox-body}
 * Digital twin for 
-  * real-time haptic feedback (*e.g.,* robotic surgery, training)
+  * real-time haptic feedback (*e.g.,* robotic surgery, *in silico* training)
   * shape-optimisation (of 3D printed organs, personalised prosthesis, etc.)
     * Inexpensive shape derivative of mechanical quantities
 :::

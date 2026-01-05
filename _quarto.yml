@@ -12,7 +12,7 @@ project:
     # - "Template"
     - "Resources"
   type: website
-  output-dir: public
+  output-dir: docs
 
 
 format: 
